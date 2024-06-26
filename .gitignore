@@ -1,0 +1,6 @@
+.env
+/__pycache__
+/narrator
+/narration
+/frames/*
+!/frames/.gitkeep
