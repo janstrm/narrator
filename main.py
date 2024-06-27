@@ -36,22 +36,31 @@ class Application:
         button_frame.pack(pady=10)
 
         self.start_button = ttk.Button(button_frame, text="Start Capture", command=self.start_capture, bootstyle="primary")
-        self.start_button.pack(side=tk.LEFT, padx=5)
+        self.start_button.pack(side=tk.LEFT, padx=5, pady=(0, 0))
 
         self.stop_button = ttk.Button(button_frame, text="Stop Capture", command=self.stop_capture, bootstyle="danger")
-        self.stop_button.pack(side=tk.LEFT, padx=5)
+        self.stop_button.pack(side=tk.LEFT, padx=5, pady=(0, 0))
+
+        # Set a smaller font for the explanatory text
+        small_font = ('Helvetica', 10)
+
+        self.capture_explanation = ttk.Label(self.left_frame, text="Start capturing frames from the webcam.", style="TLabel", font=small_font)
+        self.capture_explanation.pack(padx=10, pady=(0, 1))  # Reduce the padding between the buttons and the text
 
         self.log_output = tk.Text(self.left_frame, wrap=tk.WORD, state=tk.DISABLED, height=10, bg="#2E2E2E", fg="#FFFFFF")
-        self.log_output.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
+        self.log_output.pack(expand=True, fill=tk.BOTH, padx=10, pady=5)
 
         narrate_button_frame = ttk.Frame(self.right_frame, style="TFrame")
         narrate_button_frame.pack(pady=10)
 
         self.narrate_button = ttk.Button(narrate_button_frame, text="Start Narrating", command=self.start_narrating, bootstyle="primary")
-        self.narrate_button.pack(side=tk.LEFT, padx=5)
+        self.narrate_button.pack(side=tk.LEFT, padx=5, pady=(0, 0))
 
         self.stop_narrate_button = ttk.Button(narrate_button_frame, text="Stop Narrating", command=self.stop_narrating, bootstyle="danger")
-        self.stop_narrate_button.pack(side=tk.LEFT, padx=5)
+        self.stop_narrate_button.pack(side=tk.LEFT, padx=5, pady=(0, 0))
+
+        self.narrate_explanation = ttk.Label(self.right_frame, text="Start narrating the captured frames.", style="TLabel", font=small_font)
+        self.narrate_explanation.pack(padx=10, pady=(0, 1))  # Reduce the padding between the buttons and the text
 
         self.narration_output = tk.Text(self.right_frame, wrap=tk.WORD, state=tk.DISABLED, height=10, bg="#2E2E2E", fg="#FFFFFF")
         self.narration_output.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)

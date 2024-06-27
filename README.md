@@ -2,6 +2,11 @@
 
 This project was inspired by [cbh123/narrator](https://github.com/cbh123/narrator).
 
+## Features
+
+    - **Live Camera Capture:** Continuously captures frames from your webcam
+    - **Narration:** Generates and plays audio narration for the captured frames in the style of Sir David Attenborough
+
 ## Setup
 
 1. **Clone the repository** and set up a virtual environment:
@@ -39,6 +44,8 @@ This project was inspired by [cbh123/narrator](https://github.com/cbh123/narrato
     - Create a new voice in ElevenLabs.
     - Get the voice ID using their [Get Voices API](https://elevenlabs.io/docs/api-reference/voices) or by clicking the flask icon next to the voice in the VoiceLab tab.
     - Add the voice ID to the `.env` file.
+
+    Please ensure that you only use voices for which you have the legal rights and permissions. Unauthorized use of voices may infringe on intellectual property rights and privacy laws.
 
 ## Running the Project
 
