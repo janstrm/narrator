@@ -42,3 +42,4 @@ websockets==12.0
 ttkbootstrap
 pygame
 python-dotenv
+flask

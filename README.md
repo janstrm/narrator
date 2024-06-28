@@ -4,8 +4,8 @@ This project was inspired by [cbh123/narrator](https://github.com/cbh123/narrato
 
 ## Features
 
-    - **Live Camera Capture:** Continuously captures frames from your webcam
-    - **Narration:** Generates and plays audio narration for the captured frames in the style of Sir David Attenborough
+- **Live Camera Capture:** Continuously captures frames from your webcam
+- **Narration:** Generates and plays audio narration for the captured frames in the style of Sir David Attenborough
 
 ## Setup
 
@@ -52,7 +52,7 @@ This project was inspired by [cbh123/narrator](https://github.com/cbh123/narrato
 Run the main script in the terminal:
 
 ```bash
-python main.py
+python app.py
 ```
 
 ## Tips

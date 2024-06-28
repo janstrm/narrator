@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Attenborough Narrator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>David Attenborough Narrator</h1>
+        <div class="row">
+            <div class="column left-column">
+                <div class="video-container">
+                    <img id="video-feed" src="/video_feed" alt="Video Feed">
+                </div>
+                <div class="buttons">
+                    <button id="start-capture">Start Capture</button>
+                    <button id="stop-capture">Stop Capture</button>
+                </div>
+                <div id="capture-log-output" class="output left-output"></div>
+            </div>
+            <div class="column right-column">
+                <div class="buttons">
+                    <button id="start-narrating">Start Narrating</button>
+                    <button id="stop-narrating">Stop Narrating</button>
+                </div>
+                <div id="narration-log-output" class="output right-output"></div>
+            </div>
+        </div>
+        <button id="shutdown-server" class="shutdown-button">Shutdown Server</button> <!-- Add this button -->
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -7,6 +7,8 @@ import errno
 from elevenlabs import generate, play, set_api_key, voices
 import pygame
 from dotenv import load_dotenv
+import sys
+import contextlib
 
 # Load environment variables from .env file
 load_dotenv()
@@ -54,9 +56,11 @@ class Narrator:
         with open(file_path, "wb") as f:
             f.write(audio)
 
-        # Load the audio file using pygame.mixer.Sound for more control
-        pygame.init()
-        pygame.mixer.init()
+        # Temporarily suppress stdout and stderr to hide Pygame initialization messages
+        with open(os.devnull, 'w') as fnull:
+            with contextlib.redirect_stdout(fnull), contextlib.redirect_stderr(fnull):
+                pygame.init()
+                pygame.mixer.init()
 
         try:
             sound = pygame.mixer.Sound(file=file_path)
@@ -81,7 +85,7 @@ class Narrator:
         messages = [
             {"role": "system", "content": """
                 You are Sir David Attenborough. Narrate the picture of the human as if it is a nature documentary.
-                Make it snarky and very funny, inlcude meme references if it fits. Don't repeat yourself. Max 120 words output. Make it short. If the human does do anything remotely interesting, make a big deal about it!
+                Make it snarky and very funny, include meme references if it fits. Don't repeat yourself. Max 120 words output. Make it short. If the human does do anything remotely interesting, make a big deal about it!
                 """
             },
             *script,
@@ -120,6 +124,7 @@ class Narrator:
 
     def stop_narration(self):
         self.running = False
+        self.log("Narration stopped.")
 
 if __name__ == "__main__":
     narrator = Narrator()
